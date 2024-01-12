@@ -11,7 +11,7 @@ import {
   BigDecimal,
 } from "@graphprotocol/graph-ts";
 
-export class Token extends Entity {
+export class Gorrila extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -19,22 +19,22 @@ export class Token extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save Token entity without an ID");
+    assert(id != null, "Cannot save Gorrila entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type Token must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
+        `Entities of type Gorrila must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
-      store.set("Token", id.toString(), this);
+      store.set("Gorrila", id.toString(), this);
     }
   }
 
-  static loadInBlock(id: string): Token | null {
-    return changetype<Token | null>(store.get_in_block("Token", id));
+  static loadInBlock(id: string): Gorrila | null {
+    return changetype<Gorrila | null>(store.get_in_block("Gorrila", id));
   }
 
-  static load(id: string): Token | null {
-    return changetype<Token | null>(store.get("Token", id));
+  static load(id: string): Gorrila | null {
+    return changetype<Gorrila | null>(store.get("Gorrila", id));
   }
 
   get id(): string {
@@ -124,7 +124,7 @@ export class Token extends Entity {
   }
 }
 
-export class TokenMetadata extends Entity {
+export class GorrilaMetadata extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -132,24 +132,24 @@ export class TokenMetadata extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save TokenMetadata entity without an ID");
+    assert(id != null, "Cannot save GorrilaMetadata entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type TokenMetadata must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
+        `Entities of type GorrilaMetadata must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`,
       );
-      store.set("TokenMetadata", id.toString(), this);
+      store.set("GorrilaMetadata", id.toString(), this);
     }
   }
 
-  static loadInBlock(id: string): TokenMetadata | null {
-    return changetype<TokenMetadata | null>(
-      store.get_in_block("TokenMetadata", id),
+  static loadInBlock(id: string): GorrilaMetadata | null {
+    return changetype<GorrilaMetadata | null>(
+      store.get_in_block("GorrilaMetadata", id),
     );
   }
 
-  static load(id: string): TokenMetadata | null {
-    return changetype<TokenMetadata | null>(store.get("TokenMetadata", id));
+  static load(id: string): GorrilaMetadata | null {
+    return changetype<GorrilaMetadata | null>(store.get("GorrilaMetadata", id));
   }
 
   get id(): string {
@@ -466,12 +466,12 @@ export class User extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get tokens(): TokenLoader {
-    return new TokenLoader("User", this.get("id")!.toString(), "tokens");
+  get tokens(): GorrilaLoader {
+    return new GorrilaLoader("User", this.get("id")!.toString(), "tokens");
   }
 }
 
-export class TokenLoader extends Entity {
+export class GorrilaLoader extends Entity {
   _entity: string;
   _field: string;
   _id: string;
@@ -483,8 +483,8 @@ export class TokenLoader extends Entity {
     this._field = field;
   }
 
-  load(): Token[] {
+  load(): Gorrila[] {
     let value = store.loadRelated(this._entity, this._id, this._field);
-    return changetype<Token[]>(value);
+    return changetype<Gorrila[]>(value);
   }
 }

@@ -2,12 +2,12 @@
 
 import { DataSourceTemplate, DataSourceContext } from "@graphprotocol/graph-ts";
 
-export class TokenMetadata extends DataSourceTemplate {
+export class GorrilaMetadata extends DataSourceTemplate {
   static create(cid: string): void {
-    DataSourceTemplate.create("TokenMetadata", [cid]);
+    DataSourceTemplate.create("GorrilaMetadata", [cid]);
   }
 
   static createWithContext(cid: string, context: DataSourceContext): void {
-    DataSourceTemplate.createWithContext("TokenMetadata", [cid], context);
+    DataSourceTemplate.createWithContext("GorrilaMetadata", [cid], context);
   }
 }
