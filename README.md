@@ -41,30 +41,26 @@ v0.2
 ![1705071956385](image/README/1705071956385.png)
 
 ## Subgraph Queries
-![1705071986049](image/README/1705071986049.png)
+
+![1705073624913](image/README/1705073624913.png)
 
 ### Example Query 1: Retrieve All NFTs
 
 ```graphql
-query MyQuery {
-  tokens {
+query gorrilaInfo {
+  gorrilas {
     id
-    tokenID
-    tokenURI
-    updatedAtTimestamp
-    owner {
-      id
-    }
     ipfsHashURI {
+      description
       id
       image
       name
       traitType0
       value0
-      traitType1
-      value1
-      description
     }
+    tokenID
+    updatedAtTimestamp
+    tokenURI
   }
 }
 ```

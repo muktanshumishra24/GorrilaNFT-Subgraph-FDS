@@ -1,13 +1,13 @@
-type Token @entity {
+type Gorrila @entity {
 	id: ID!
 	owner: User!
 	tokenID: BigInt!
 	tokenURI: String!
-	ipfsHashURI: TokenMetadata
+	ipfsHashURI: GorrilaMetadata
 	updatedAtTimestamp: BigInt
 }
 
-type TokenMetadata @entity {
+type GorrilaMetadata @entity {
 	id: ID!
 	image: String!
 	name: String!
@@ -30,5 +30,5 @@ type TokenMetadata @entity {
 
 type User @entity {
 	id: ID!
-	tokens: [Token!]! @derivedFrom(field: "owner")
+	tokens: [Gorrila!]! @derivedFrom(field: "owner")
 }

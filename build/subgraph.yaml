@@ -14,7 +14,7 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Token
+        - Gorrila
         - Owner
       abis:
         - name: gorrila
@@ -24,7 +24,7 @@ dataSources:
           handler: handleTransfer
       file: gorrila/gorrila.wasm
 templates:
-  - name: TokenMetadata
+  - name: GorrilaMetadata
     kind: file/ipfs
     mapping:
       apiVersion: 0.0.7
@@ -32,7 +32,7 @@ templates:
       file: gorrila/gorrila.wasm
       handler: handleMetadata
       entities:
-        - TokenMetadata
+        - GorrilaMetadata
       abis:
         - name: gorrila
-          file: TokenMetadata/abis/gorrila.json
+          file: GorrilaMetadata/abis/gorrila.json
