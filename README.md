@@ -24,7 +24,7 @@ v0.2
 
 ### Subgraph Endpoint
 
-[(https://api.studio.thegraph.com/query/31313/subgraph-assignment/version/latest)]
+[Link for the Subgraph](https://api.studio.thegraph.com/query/31313/subgraph-assignment/version/latest)
 
 ## NFT Collection Information
 
