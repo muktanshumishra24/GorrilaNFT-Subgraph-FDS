@@ -11,7 +11,7 @@ It allows developers to interact with the NFT collection's metadata and explore 
 ## Features
 
 - Indexes [Gorilla Punk NFT](https://opensea.io/collection/the-gorilla-punk-gang) metadata.
-- Provides a GraphQL API for querying Gorilla Punk NFT data.
+- Provides a GraphQL API for querying Gorilla Puk NFT data.
 
 ## Subgraph Information
 
@@ -69,7 +69,7 @@ query MyQuery($id: ID = "100") {
   }
 }
 ```
-
+![Image](image/README/1705074516342.png)
 ## NFT Collection Information
 
 ### NFT Contract Address
