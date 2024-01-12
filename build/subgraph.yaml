@@ -1,6 +1,6 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: gorrila
@@ -18,21 +18,21 @@ dataSources:
         - Owner
       abis:
         - name: gorrila
-          file: ./abis/gorrila.json
+          file: gorrila/abis/gorrila.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/gorrila.ts
+      file: gorrila/gorrila.wasm
 templates:
-    - name: TokenMetadata
-      kind: file/ipfs
-      mapping:
-          apiVersion: 0.0.7
-          language: wasm/assemblyscript
-          file: ./src/gorrila.ts
-          handler: handleMetadata
-          entities:
-              - TokenMetadata
-          abis:
-              - name: gorrila
-                file: ./abis/gorrila.json
+  - name: TokenMetadata
+    kind: file/ipfs
+    mapping:
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      file: gorrila/gorrila.wasm
+      handler: handleMetadata
+      entities:
+        - TokenMetadata
+      abis:
+        - name: gorrila
+          file: TokenMetadata/abis/gorrila.json
