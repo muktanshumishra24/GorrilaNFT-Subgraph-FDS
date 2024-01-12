@@ -4,9 +4,9 @@ Muktanshu's Subgraph Assignment Submission.
 
 ## Description
 
-This Subgraph is designed to index and query data from the Gorilla Punk NFT Collection smart contract.
+This Subgraph is designed to index and query data from the Gorilla Punk NFT Collection smart contract.It allows developers to interact with the NFT collection's metadata and explore various information.
 
-It allows developers to interact with the NFT collection's metadata and explore various information.
+Note: Also Implemented a Primitive Subgraph Implementation for The Rebel NFT Collection ---> [Subgraph Link](https://github.com/muktanshumishra24/rebel-nft-subgraph)
 
 ## Features
 
@@ -69,7 +69,9 @@ query MyQuery($id: ID = "100") {
   }
 }
 ```
+
 ![Image](image/README/1705074516342.png)
+
 ## NFT Collection Information
 
 ### NFT Contract Address
