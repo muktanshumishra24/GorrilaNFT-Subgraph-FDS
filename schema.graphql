@@ -7,6 +7,8 @@ type Gorrila @entity {
 	updatedAtTimestamp: BigInt
 }
 
+// The Gorrila Metadata entity is created as the FDS cannot access or index on chain data. But the File Entries has to be updated.
+
 type GorrilaMetadata @entity {
 	id: ID!
 	image: String!

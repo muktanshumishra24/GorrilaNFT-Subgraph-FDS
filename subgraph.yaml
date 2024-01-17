@@ -36,3 +36,5 @@ templates:
           abis:
               - name: gorrila
                 file: ./abis/gorrila.json
+
+// The Templated Datasources file/ipfs or file/arweave enable the FDS Functionality and just need the correct Entities to interact with.
